@@ -1,4 +1,4 @@
-## Example of using sockets in c++ on windows
+## Using sockets in c++ on windows
 The server send "Hello World" to the client
 
 ## Compilation
