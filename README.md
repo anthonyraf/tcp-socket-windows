@@ -3,11 +3,11 @@ The server send "Hello World" to the client
 
 ## Compilation
 
-    $ g++ -o serveur.exe serveur.cpp -lws2_32
+    $ g++ -o server.exe server.cpp -lws2_32
     $ g++ -o client.exe client.cpp -lws2_32
 > Note: `-lws2_32` is obligatory
 
 ## Run
 
-    $ serveur.exe
+    $ server.exe
     $ client.exe
