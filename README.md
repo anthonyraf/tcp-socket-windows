@@ -1,13 +1,9 @@
-## Using sockets in c++ on windows
+## Using sockets in c++ on linux
 The server send "Hello World" to the client
 
 ## Compilation
-
-    $ g++ -o server.exe server.cpp -lws2_32
-    $ g++ -o client.exe client.cpp -lws2_32
-> Note: `-lws2_32` is obligatory
-
+    $ g++ -o server.exe server.cpp
+    $ g++ -o client.exe client.cpp
 ## Run
-
-    $ server.exe
-    $ client.exe
+    $ ./server
+    $ ./client
