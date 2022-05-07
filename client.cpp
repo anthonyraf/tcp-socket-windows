@@ -1,16 +1,16 @@
-#include <WinSock2.h>
-#include <ws2tcpip.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <netdb.h>
+#include <arpa/inet.h>
 #include <iostream>
 
-#pragma comment(lib, "ws2_32.lib")
-#define PORT 5000
+#define PORT 5001
 
 
 int main(int argc, char const *argv[])
 {
-    WSADATA WSAData;
-    WSAStartup(MAKEWORD(2,0), &WSAData);
-
     int socketClient = socket(AF_INET, SOCK_STREAM, 0);
 
     struct sockaddr_in addrClient;
@@ -22,11 +22,10 @@ int main(int argc, char const *argv[])
     std::cout << "Connecte" << std::endl;
 
     char message[100];
-    recv(socketClient, (char*)&message, sizeof(message), 0);
+    recv(socketClient, &message, sizeof(message), 0);
     std::cout << message << std::endl;
 
 
-    closesocket(socketClient);
-    WSACleanup();
+    close(socketClient);
     return 0;
 }
